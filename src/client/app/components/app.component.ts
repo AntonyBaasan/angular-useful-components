@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes } from '@angular/router';
+import { ROUTER_DIRECTIVES, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar.component';
 import { ToolbarComponent } from './toolbar.component';
 import { NameListService } from '../shared/index';
@@ -11,27 +11,23 @@ import { ProjectSearchComponent } from '../+project-search/index';
   selector: 'sd-app',
   viewProviders: [NameListService],
   templateUrl: 'app/components/app.component.html',
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent],
-  providers: [ROUTER_PROVIDERS]
+  directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]
 })
 @Routes([
   {
-    name: 'Projects',
     path: '/',
-    component: ProjectSearchComponent,
-    useAsDefault: true//not there yet  (https://angular.io/docs/ts/latest/guide/router.html#!#default)
+    component: ProjectSearchComponent
+    // useAsDefault: true//not there yet  (https://angular.io/docs/ts/latest/guide/router.html#!#default)
   },
   // {
   //   path: '/',
   //   component: HomeComponent
   // },
   {
-    name: 'About',
     path: '/about',
     component: AboutComponent
   },
   {
-    name: 'Editor',
     path: '/editor',
     component: EditorComponent
   }
