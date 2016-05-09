@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES, Routes } from '@angular/router';
-import { NavbarComponent } from './navbar.component';
-import { ToolbarComponent } from './toolbar.component';
-import { NameListService } from '../shared/index';
-import { AboutComponent } from '../+about/index';
-import { EditorComponent } from '../+editor/index';
-import { ProjectSearchComponent } from '../+project-search/index';
+import {Component} from '@angular/core';
+import {ROUTER_DIRECTIVES, Routes} from '@angular/router';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {NavbarComponent} from './navbar.component';
+import {ToolbarComponent} from './toolbar.component';
+import {NameListService} from '../shared/index';
+import {AboutComponent} from '../+about/index';
+import {EditorComponent} from '../+editor/index';
+import {ProjectSearchComponent} from '../+project-search/index';
 
 @Component({
   selector: 'sd-app',
   viewProviders: [NameListService],
   templateUrl: 'app/components/app.component.html',
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]
+  directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent],
+  providers: [HTTP_PROVIDERS]
 })
 @Routes([
   {
@@ -32,4 +34,5 @@ import { ProjectSearchComponent } from '../+project-search/index';
     component: EditorComponent
   }
 ])
-export class AppComponent {}
+export class AppComponent {
+}

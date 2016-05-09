@@ -1,16 +1,25 @@
-<!--<p>-->
-  <!--Howdy! Here's a list of awesome computer scientists.-->
-  <!--Do you know any others? Add to the list yourself.-->
-<!--</p>-->
+<p>
+  Find github projects by organization
+</p>
 
-<!--<form (submit)="addName()">-->
-  <!--<input [(ngModel)]="newName" placeholder="Awesome Computer Scientist">-->
-  <!--<button type="submit">Add</button>-->
-<!--</form>-->
+<form (submit)="searchOrg(textOrg.value)">
+  <input #textOrg placeholder="Insert organization name...">
+  <button type="submit">Find Org</button>
+</form>
+
+<div *ngIf="searchResultOrg">
+  {{searchResultOrg.name}}<br/>
+  {{searchResultOrg.blog}}<br/>
+</div>
+
+<br/>
+
+<form (submit)="searchReposForOrg(textOrgForRepo.value)">
+<input #textOrgForRepo placeholder="Insert organization name...">
+<button type="submit">Find Repos</button>
+  </form>
 
 
-<!--<ul>-->
-  <!--<li *ngFor="let name of nameListService.get()">{{name}}</li>-->
-<!--</ul>-->
-
-<h1>Project page</h1>
+  <ul>
+  <li *ngFor="let repo of searchResultRepos">{{repo.name}}</li>
+  </ul>
