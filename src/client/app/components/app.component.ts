@@ -3,7 +3,6 @@ import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar.component';
 import { ToolbarComponent } from './toolbar.component';
 import { NameListService } from '../shared/index';
-import { HomeComponent } from '../+home/index';
 import { AboutComponent } from '../+about/index';
 import { EditorComponent } from '../+editor/index';
 import { ProjectSearchComponent } from '../+project-search/index';

@@ -4,9 +4,6 @@
 import {Component} from '@angular/core';
 import {FORM_DIRECTIVES} from '@angular/common';
 
-import {NameListService} from '../../shared/index';
-
-
 @Component({
   selector: 'project-search',
   providers: [],
